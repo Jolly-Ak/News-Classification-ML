@@ -20,7 +20,7 @@ public class Categorie {
     }
 
 
-    public  ArrayList<PaireChaineEntier> getLexique() {
+    public ArrayList<PaireChaineEntier> getLexique() {
         return lexique;
     }
 
@@ -30,11 +30,6 @@ public class Categorie {
 
     }
 
-
-    import java.io.FileInputStream;
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.io.*;
 
     public class PaireChaineEntier {
         private String chaine;
@@ -46,12 +41,12 @@ import java.io.*;
         }
 
 
-
-        public void initLexique (String nomFichier) throws FileNotFoundException {
+        public void initLexique(String nomFichier) throws FileNotFoundException {
             ArrayList<PaireChaineEntier> lexique = new ArrayList<>();
 
 
             try {
+                System.out.println("lecture du fichier");
                 // lecture du fichier d'entrée
                 FileInputStream file = new FileInputStream(nomFichier);
                 Scanner scanner = new Scanner(file);
@@ -74,19 +69,16 @@ import java.io.*;
         }
 
 
-
     }
 
-}
 
-
-
-
-
-//calcul du score d'une dépêche pour la catégorie
+    //calcul du score d'une dépêche pour la catégorie
     public int score(Depeche d) {
         return 0;
     }
 
 
 }
+
+
+

@@ -9,23 +9,21 @@ public class PaireChaineEntier {
 
 
     public PaireChaineEntier(String chaine, int entier) {
+
         this.chaine = chaine;
         this.entier = entier;
-
-    }
-    public String getChaine() {
-        return chaine;
-
+                System.out.println("Chaine créée : " + this.chaine + " : " + this.entier);
     }
     public int getEntier() {
         return entier;
 
     }
-    public String setChaine(String chaine){
-        return chaine;
+    public void setChaine(String chaine){
+        this.chaine = chaine;
+
     }
-    public int setEntier(int entier){
-        return entier;
+    public void setEntier(int entier){
+        this.entier = entier;
     }
     public void afficher(){
         System.out.println(chaine + " : " + entier);
