@@ -7,9 +7,17 @@ public class PaireChaineEntier {
     private String chaine;
     private int entier;
 
+<<<<<<< Updated upstream
     public PaireChaineEntier(String chaine, int entier) {
         this.chaine = chaine;
         this.entier = entier;
+=======
+
+
+    public void initLexique (String nomFichier){
+
+        
+>>>>>>> Stashed changes
     }
 }
 
