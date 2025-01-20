@@ -24,5 +24,7 @@ investissement:3
 capital:2
 patrimoine:2
 richesse:2
+credit:2
+dette:2
 pauvreté:2
 
