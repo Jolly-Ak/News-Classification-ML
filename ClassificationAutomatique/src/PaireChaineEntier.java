@@ -7,17 +7,28 @@ public class PaireChaineEntier {
     private String chaine;
     private int entier;
 
-<<<<<<< Updated upstream
+
     public PaireChaineEntier(String chaine, int entier) {
         this.chaine = chaine;
         this.entier = entier;
-=======
 
+    }
+    public String getChaine() {
+        return chaine;
 
-    public void initLexique (String nomFichier){
+    }
+    public int getEntier() {
+        return entier;
 
-        
->>>>>>> Stashed changes
+    }
+    public String setChaine(String chaine){
+        return chaine;
+    }
+    public int setEntier(int entier){
+        return entier;
+    }
+    public void afficher(){
+        System.out.println(chaine + " : " + entier);
     }
 }
 
