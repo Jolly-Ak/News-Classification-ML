@@ -1,0 +1,19 @@
+Nomination :2
+Rasemblement : 2
+national :2
+Gauche :3
+Droite :3
+Préseident :3
+Republique :2
+Gouvernement :3
+Ministre :3
+Débat :2
+Scrutin :3
+Election :3
+Etat :1
+rivaux :2
+loi :2
+Projet :1
+secrétaire :1
+Assemblé : 2
+Financière : 1
