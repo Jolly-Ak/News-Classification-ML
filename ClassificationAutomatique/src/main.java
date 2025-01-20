@@ -1,7 +1,8 @@
+import java.io.FileNotFoundException;
+
 public class main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Categorie sport = new Categorie("sport");
-        sport.initLexique("sport.txt");
-        System.out.println(sport.getLexique());
+        System.out.println(sport.initLexique("sport.txt"));
     }
 }
