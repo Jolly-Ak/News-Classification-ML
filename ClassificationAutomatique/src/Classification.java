@@ -73,7 +73,7 @@ public class Classification {
 //        }
         depeches.getFirst().afficher();
         Categorie sport = new Categorie("sport");
-        sport.initLexique("sport.txt");
+        sport.initLexique("lexique/sport.txt");
         System.out.println("Lexique de la catégorie sport :"+ sport.getlexic());
 
         int a = sport.score(depeches.getFirst());
@@ -93,6 +93,7 @@ public class Classification {
         culture.initLexique("lexique/culture.txt");
         categories.add(culture);
 
+        // print culture
 
 
 
