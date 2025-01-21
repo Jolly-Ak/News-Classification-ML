@@ -68,16 +68,16 @@ public class Classification {
         System.out.println("chargement des dépêches");
         ArrayList<Depeche> depeches = lectureDepeches("depeches.txt");
 
-        for (int i = 0; i < depeches.size(); i++) {
-            depeches.get(i).afficher();
-        }
-
+//        for (int i = 0; i < depeches.size(); i++) {
+//            depeches.get(i).afficher();
+//        }
+        depeches.getFirst().afficher();
         Categorie sport = new Categorie("sport");
         sport.initLexique("sport.txt");
         System.out.println("Lexique de la catégorie sport :"+ sport.getlexic());
 
-        sport.score(depeche );
-
+        int a = sport.score(depeches.getFirst());
+        System.out.println("score de la première dépêche pour la catégorie sport :"+ a);
 
 
     }
