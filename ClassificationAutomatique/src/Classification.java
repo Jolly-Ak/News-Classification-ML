@@ -76,8 +76,13 @@ public class Classification {
         sport.initLexique("sport.txt");
         System.out.println("Lexique de la catégorie sport :"+ sport.getlexic());
 
+<<<<<<< Updated upstream
         int a = sport.score(depeches.getFirst());
         System.out.println("score de la première dépêche pour la catégorie sport :"+ a);
+=======
+
+
+>>>>>>> Stashed changes
 
 
     }

@@ -2,9 +2,9 @@ import java.io.FileNotFoundException;
 
 public class main {
     public static void main(String[] args) throws FileNotFoundException {
-        Categorie sport = new Categorie("sport");
+        Categorie sport = new Categorie("spo");
         sport.initLexique("sport.txt");
-        System.out.println("Lexique de la catégorie sport :"+ sport.getlexic());
-        System.out.println("premier lexique " + sport.getlexic().get(0).getChaine());
+        Categorie sciences = new Categorie("SCIENCES");
+        sciences.initLexique("sciences.txt");
     }
 }

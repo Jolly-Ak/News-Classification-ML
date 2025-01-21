@@ -19,8 +19,19 @@ public class UtilitairePaireChaineEntier {
     }
 
     public static String chaineMax(ArrayList<PaireChaineEntier> listePaires) {
+        //qui retourne la chaine associé au plus grand entier de listePaires
+        int Suv = 0;
+        for (int i = 0; i < listePaires.size(); i++) {
+            if (listePaires.get(i).getEntier() > listePaires.get(Suv).getEntier()){
+                Suv = i;
+            }
 
-        return "SPORT";
+
+
+
+        }
+
+        return listePaires.get(Suv).getChaine();
     }
 
 
