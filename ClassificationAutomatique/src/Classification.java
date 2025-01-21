@@ -76,7 +76,7 @@ public class Classification {
         sport.initLexique("sport.txt");
         System.out.println("Lexique de la catégorie sport :"+ sport.getlexic());
 
-        sport.score(depeche);
+        sport.score(depeche );
 
 
 
