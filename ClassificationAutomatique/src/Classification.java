@@ -74,11 +74,27 @@ public class Classification {
 //        }
         depeches.getFirst().afficher();
         Categorie sport = new Categorie("sport");
-        sport.initLexique("sport.txt");
+        sport.initLexique("lexique/sport.txt");
         System.out.println("Lexique de la catégorie sport :"+ sport.getlexic());
 
         int a = sport.score(depeches.getFirst());
         System.out.println("score de la première dépêche pour la catégorie sport :"+ a);
+
+        ArrayList<Categorie> categories= new ArrayList<Categorie>();
+        categories.add(sport);
+        Categorie politique = new Categorie("politique");
+        politique.initLexique("lexique/politique.txt");
+        categories.add(politique);
+
+        Categorie economie = new Categorie("economie");
+        economie.initLexique("lexique/economie.txt");
+        categories.add(economie);
+
+        Categorie culture = new Categorie("culture");
+        culture.initLexique("lexique/culture.txt");
+        categories.add(culture);
+
+        // print culture
 
 
 
