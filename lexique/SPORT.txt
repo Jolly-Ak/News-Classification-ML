@@ -16,5 +16,5 @@ Position:1
 Bronze:2
 Argent:2
 Or:2
-tournoi:3
+masculine:3
 finale:2
