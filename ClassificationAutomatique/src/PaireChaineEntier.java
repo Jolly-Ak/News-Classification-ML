@@ -16,7 +16,9 @@ public class PaireChaineEntier {
     }
     public int getEntier() {
         return entier;
-
+    }
+    public String getChaine(){
+        return chaine;
     }
     public void setChaine(String chaine){
         this.chaine = chaine;
@@ -28,6 +30,18 @@ public class PaireChaineEntier {
     public void afficher(){
         System.out.println(chaine + " : " + entier);
     }
+/*
+    public static int entierPourChaine(ArrayList<PaireChaineEntier>
+                                               listePaires, String chaine){
+        for (PaireChaineEntier paire : listePaires){
+
+
+
+
+    }
+
+*/
+
 }
 
 

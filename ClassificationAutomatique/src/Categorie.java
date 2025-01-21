@@ -15,8 +15,7 @@ public class Categorie {
     }
 
 
-    public static void  initLexique(String nomFichier) throws FileNotFoundException {
-        ArrayList<PaireChaineEntier> lexique = new ArrayList<>();
+    public  void  initLexique(String nomFichier)  {
 
 
         try {
@@ -32,7 +31,7 @@ public class Categorie {
                 ligne = scanner.nextLine();
 
 
-                lexique.add(new PaireChaineEntier(chaine, entier));
+                this.lexique.add(new PaireChaineEntier(chaine, entier));
 
             }
             scanner.close();
