@@ -12,7 +12,6 @@ public class PaireChaineEntier {
 
         this.chaine = chaine;
         this.entier = entier;
-                System.out.println("Chaine créée : " + this.chaine + " : " + this.entier);
     }
     public int getEntier() {
         return entier;

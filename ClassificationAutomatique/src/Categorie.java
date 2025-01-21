@@ -54,7 +54,6 @@ public class Categorie {
         int score = 0;
         System.out.println("mots de la depeche : " + mots);
         for (String mot : mots) {
-            System.out.println("mot :" + mot+":");
             for (PaireChaineEntier paire : lexique) {
                 if (mot.compareTo(paire.getChaine()) == 0) {
                     score += paire.getEntier();
