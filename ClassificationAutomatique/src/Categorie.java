@@ -56,7 +56,6 @@ public class Categorie {
         //on le découpe en mots
         ArrayList<String> mots = d.getMots();
         int score = 0;
-        System.out.println("mots de la depeche : " + mots);
         for (String mot : mots) {
             for (PaireChaineEntier paire : lexique) {
                 if (mot.compareTo(paire.getChaine()) == 0) {

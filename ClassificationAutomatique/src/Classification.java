@@ -2,10 +2,13 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Dictionary;
 import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.Dictionary;
+import java.util.Hashtable;
 
 public class Classification {
 
@@ -44,38 +47,66 @@ public class Classification {
     }
 
 
-    public static void classementDepeches(ArrayList<Depeche> depeches, ArrayList<Categorie> categories, String nomFichier) {
+    public static void classementDepeches(ArrayList<Depeche> depeches,ArrayList<Categorie> categories,String nomFichier){
+//        qui pour chacune des dépêches de depeches, calcule le score pour chaque catégorie de categories et
+//        écrit dans le fichier de nom nomFichier, le nom de la catégorie ayant le plus grand score ainsi que les
+//        pourcentages conformément au format attendu pour les fichiers réponses (voir ci-dessus). Prenez exemple sur
+//        la classe ExempleEcritureFichier pour l’écriture dans un fichier.
+        ArrayList<Integer> validation = new ArrayList<Integer>();
+        ArrayList<Integer> donner = new ArrayList<Integer>();
+        //créée un dictionaire str et int
+        Dictionary index_categorie = new Hashtable();
+        for (int i = 0; i <categories.size() ; i++) {
+            index_categorie.put(categories.get(i).getNom(),i);
+        }
+        ArrayList<Integer> valide = new ArrayList<Integer>();
+        ArrayList<Integer> prediction = new ArrayList<Integer>();
 
-        String categorieMax = null;
-        for (int i = 0; i < depeches.size(); i++) {
-            Depeche depeche = depeches.get(i);
+        for (int i = 0; i < index_categorie.size(); i++) {
+            valide.add(0);
+            prediction.add(0);
+        }
 
+        System.out.println("dictionnaire :"+ index_categorie);
+        System.out.println("validation :"+ validation);
+        System.out.println("donner :"+ donner);
 
-            int scoreMax = 0;
-            categorieMax = "";
-            for (int j = 0; j < categories.size(); j++) {
-                Categorie categorie = categories.get(j);
-                int score = categorie.score(depeche);
-                if (score > scoreMax) {
-                    scoreMax = score;
-                    categorieMax = categorie.getNom();
+        try {
+            FileWriter writer = new FileWriter(nomFichier);
+            for (int i = 0; i < depeches.size(); i++) {
+                Depeche depeche = depeches.get(i);
+                writer.write(depeche.getId() + ":");
+                int scoreMax = -1;
+                String categorieMax = "";
+
+                for (int j = 0; j < categories.size(); j++) {
+                    Categorie categorie = categories.get(j);
+                    int score = categorie.score(depeche);
+                    if (score > scoreMax) {
+                        categorieMax = categorie.getNom();
+                        scoreMax = score;
+                    }
                 }
+
+                int index = (int) index_categorie.get(categorieMax);
+                if (depeche.getCategorie().toLowerCase().compareTo(categorieMax) == 0) {
+                    prediction.set(index, prediction.get(index) + 1);
+                }
+                valide.set(index, valide.get(index) + 1);
+                writer.write(categorieMax + ":"  + scoreMax + "\n");
             }
-            // count = "nnn 'categoriemax'" with nnn the number of the ligne in the file
-            String count = "ligne " + i + " " + categorieMax;
+            for (int i = 0; i < index_categorie.size(); i++) {
 
-            try {
-                FileWriter file = new FileWriter("output.txt");
-                file.write(count + "\n");
-                file.close();
-                System.out.println("votre saisie a été écrite avec succès dans fichier-sortie.txt");
-            } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println("valide :"+ valide.get(i));
+
+                System.out.println("prediction :"+ prediction.get(i));
+                writer.write(categories.get(i).getNom() + ":" + (prediction.get(i) * 100 / valide.get(i)) + "%\n");
             }
 
-
-        depeche.setCategorie(categorieMax);
-    }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -84,7 +115,7 @@ public class Classification {
 /*qui retourne une ArrayList<PaireChaineEntier> contenant tous les mots présents dans au
 moins une dépêche de la catégorie categorie. Attention, même si le mot est présent plusieurs fois, il ne
 doit apparaître qu’une fois dans la ArrayList retournée. Dans les entiers, nous stockerons les scores
-associés à chaque mot et dans un premier temps, nous initialiserons ce score à 0.*/
+associés à chaque mot et dans un premier tempvs, nous initialiserons ce score à 0.*/
 
         ArrayList<PaireChaineEntier> resultat = new ArrayList<>();
 
@@ -151,6 +182,9 @@ associés à chaque mot et dans un premier temps, nous initialiserons ce score �
 
         Categorie culture = new Categorie("culture");
         culture.initLexique("lexique/culture.txt");
+
+        Categorie science = new Categorie("science");
+        science.initLexique("lexique/sciences.txt");
 
 
         categories.add(culture);

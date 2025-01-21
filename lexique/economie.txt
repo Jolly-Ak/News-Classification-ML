@@ -1,5 +1,5 @@
 economie:3
-entreprise:2
+entreprise:1
 bourse:2
 dollar:1
 euro:1
