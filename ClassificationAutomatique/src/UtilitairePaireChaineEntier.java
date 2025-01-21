@@ -9,7 +9,13 @@ public class UtilitairePaireChaineEntier {
     }
 
     public static int entierPourChaine(ArrayList<PaireChaineEntier> listePaires, String chaine) {
-        return 0;
+        for (int i = 0; i <listePaires.size() ; i++) {
+            if (listePaires.get(i).getChaine().equals(chaine)){
+                return listePaires.get(i).getEntier();
+            }
+
+        }
+        return -1;
     }
 
     public static String chaineMax(ArrayList<PaireChaineEntier> listePaires) {
