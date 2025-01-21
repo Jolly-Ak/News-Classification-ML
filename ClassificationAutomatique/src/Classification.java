@@ -92,10 +92,13 @@ public class Classification {
 
         Categorie culture = new Categorie("culture");
         culture.initLexique("lexique/culture.txt");
+
+
         categories.add(culture);
 
+        float b = UtilitairePaireChaineEntier.moyenne(sport.getlexic());
         // print culture
-
+        System.out.println("moyenne de la catégorie culture :"+ a);
 
 
 
