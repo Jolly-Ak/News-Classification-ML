@@ -74,14 +74,13 @@ public class Classification {
         depeches.getFirst().afficher();
         Categorie sport = new Categorie("sport");
         sport.initLexique("sport.txt");
-        System.out.println("Lexique de la catégorie sport :"+ sport.getlexic());
+        System.out.println("Lexique de la catégorie sport :" + sport.getlexic());
 
         int a = sport.score(depeches.getFirst());
-        System.out.println("score de la première dépêche pour la catégorie sport :"+ a);
+        System.out.println("score de la première dépêche pour la catégorie sport :" + a);
 
 
-
-
+        
 
     }
 
