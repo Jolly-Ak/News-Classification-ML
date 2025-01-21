@@ -3,6 +3,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class Classification {
 
@@ -43,20 +46,76 @@ public class Classification {
 
     public static void classementDepeches(ArrayList<Depeche> depeches, ArrayList<Categorie> categories, String nomFichier) {
 
+        String categorieMax = null;
+        for (int i = 0; i < depeches.size(); i++) {
+            Depeche depeche = depeches.get(i);
+
+
+            int scoreMax = 0;
+            categorieMax = "";
+            for (int j = 0; j < categories.size(); j++) {
+                Categorie categorie = categories.get(j);
+                int score = categorie.score(depeche);
+                if (score > scoreMax) {
+                    scoreMax = score;
+                    categorieMax = categorie.getNom();
+                }
+            }
+            // count = "nnn 'categoriemax'" with nnn the number of the ligne in the file
+            String count = "ligne " + i + " " + categorieMax;
+
+            try {
+                FileWriter file = new FileWriter("output.txt");
+                file.write(count + "\n");
+                file.close();
+                System.out.println("votre saisie a été écrite avec succès dans fichier-sortie.txt");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        depeche.setCategorie(categorieMax);
+    }
+
     }
 
 
     public static ArrayList<PaireChaineEntier> initDico(ArrayList<Depeche> depeches, String categorie) {
-        ArrayList<PaireChaineEntier> resultat = new ArrayList<>();
-        return resultat;
+/*qui retourne une ArrayList<PaireChaineEntier> contenant tous les mots présents dans au
+moins une dépêche de la catégorie categorie. Attention, même si le mot est présent plusieurs fois, il ne
+doit apparaître qu’une fois dans la ArrayList retournée. Dans les entiers, nous stockerons les scores
+associés à chaque mot et dans un premier temps, nous initialiserons ce score à 0.*/
 
+        ArrayList<PaireChaineEntier> resultat = new ArrayList<>();
+
+        for (int i = 0; i < depeches.size(); i++) {
+            if (depeches.get(i).getCategorie().equals(categorie)) {
+                ArrayList<String> mots = depeches.get(i).getMots();
+                for (int j = 0; j < mots.size(); j++) {
+                    if (UtilitairePaireChaineEntier.indicePourChaine(resultat,mots.get(j)) == -1) {
+                        resultat.add(new PaireChaineEntier(mots.get(j), 0));
+                    }
+                }
+            }
+        }
+        return resultat;
     }
+
 
     public static void calculScores(ArrayList<Depeche> depeches, String categorie, ArrayList<PaireChaineEntier> dictionnaire) {
     }
 
     public static int poidsPourScore(int score) {
-        return 0;
+        if (score < 0) {
+            return 0;
+        } else if (score < 5) {
+            return 1;
+        } else if (score < 10) {
+            return 2;
+        } else if (score < 15) {
+            return 3;
+        }
+        return -1;
     }
 
     public static void generationLexique(ArrayList<Depeche> depeches, String categorie, String nomFichier) {
@@ -95,10 +154,11 @@ public class Classification {
 
 
         categories.add(culture);
+        classementDepeches(depeches, categories, "output.txt");
 
         float b = UtilitairePaireChaineEntier.moyenne(sport.getlexic());
         // print culture
-        System.out.println("moyenne de la catégorie culture :"+ a);
+        System.out.println("moyenne de la catégorie culture :"+ b);
 
 
 

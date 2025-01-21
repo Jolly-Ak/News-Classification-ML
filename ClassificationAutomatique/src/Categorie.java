@@ -46,6 +46,10 @@ public class Categorie {
         return lexique;
     }
 
+    public String getNom() {
+        return nom;
+    }
+
     //calcul du score d'une dépêche pour la catégorie
     public int score(Depeche d) {
         //d.contenue contient le texte de la dépêche
