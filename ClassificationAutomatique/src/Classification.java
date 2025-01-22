@@ -118,9 +118,9 @@ doit apparaître qu’une fois dans la ArrayList retournée. Dans les entiers, n
 associés à chaque mot et dans un premier tempvs, nous initialiserons ce score à 0.*/
 
         ArrayList<PaireChaineEntier> resultat = new ArrayList<>();
-
+        System.out.println("debut initDico");
         for (int i = 0; i < depeches.size(); i++) {
-            if (depeches.get(i).getCategorie().equals(categorie)) {
+            if ((depeches.get(i).getCategorie().compareTo(categorie)) == 0) {
                 ArrayList<String> mots = depeches.get(i).getMots();
                 for (int j = 0; j < mots.size(); j++) {
                     if (UtilitairePaireChaineEntier.indicePourChaine(resultat,mots.get(j)) == -1) {
@@ -150,6 +150,29 @@ associés à chaque mot et dans un premier tempvs, nous initialiserons ce score 
     }
 
     public static void generationLexique(ArrayList<Depeche> depeches, String categorie, String nomFichier) {
+
+        /*qui crée pour la catégorie categorie le fichier lexique de nom nomFichier à partir du vecteur de
+dépêches depeches. Cette méthode doit construire une ArrayList<PaireChaineEntier> avec
+initDico, puis mettre à jour les scores dans ce vecteur avec calculScores et enfin utiliser le vecteur
+résultant pour créer un fichier lexique en utilisant la fonction poidsPourScore. Prenez exemple sur la
+classe ExempleEcritureFichier pour l’écriture dans un fichier.*/
+
+        ArrayList<PaireChaineEntier> dictionnaire = new ArrayList<>();
+        dictionnaire = initDico(depeches, categorie);
+        calculScores(depeches, categorie, dictionnaire);
+        System.out.println("dictionnaire :"+ dictionnaire);
+
+        try {
+            FileWriter writer = new FileWriter(nomFichier);
+            System.out.println("dictionnaire :"+ dictionnaire);
+            for (int i = 0; i < dictionnaire.size(); i++) {
+                writer.write(dictionnaire.get(i).getChaine() + ":" + poidsPourScore(dictionnaire.get(i).getEntier()) + "\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
     }
 
@@ -193,6 +216,16 @@ associés à chaque mot et dans un premier tempvs, nous initialiserons ce score 
         float b = UtilitairePaireChaineEntier.moyenne(sport.getlexic());
         // print culture
         System.out.println("moyenne de la catégorie culture :"+ b);
+
+
+        ArrayList<Depeche> depeches2 = lectureDepeches("depeches.txt");
+        for (int i = 0; i < depeches2.size(); i++) {
+            depeches2.get(i).afficher();
+
+        }
+        generationLexique(depeches2, "SCIENCES", "lexique/culturesss.txt");
+
+
 
 
 
