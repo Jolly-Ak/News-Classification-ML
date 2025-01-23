@@ -6,7 +6,7 @@ public class main {
         Categorie sport = new Categorie("sport");
         sport.initLexique("sport.txt");
 
-        System.out.println(UtilitairePaireChaineEntier.indicePourChaine(sport.getlexic() , "Médailles"));
-        System.out.println(UtilitairePaireChaineEntier.moyenne(sport.getlexic()));
+        System.out.println(UtilitairePaireChaineEntier.indicePourChaine(sport.getLexique() , "Médailles"));
+        System.out.println(UtilitairePaireChaineEntier.moyenne(sport.getLexique()));
     }
 }
