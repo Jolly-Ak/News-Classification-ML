@@ -25,7 +25,7 @@ l:0
 affiche:1
 du:0
 nouveau:0
-film:1
+film:2
 jon:1
 watts:1
 wolfs:1
@@ -200,7 +200,7 @@ zaho:1
 sagazan…:1
 lundi:0
 service:0
-culture:1
+culture:2
 propose:0
 aux:0
 lecteurs:1
@@ -247,7 +247,7 @@ préparer:0
 esprits:1
 invasion:1
 chinoise:0
-série:1
+série:2
 zero:1
 day:1
 dont:0
@@ -301,7 +301,7 @@ bout:0
 ferdinand:1
 céline:1
 dessinateur:1
-réalisateur:1
+réalisateur:2
 acquis:1
 auprès:1
 gallimard:1
@@ -356,7 +356,7 @@ performeuse:1
 allemande:0
 passée:1
 suite:1
-films:1
+films:2
 installations:1
 morte:1
 6:0
@@ -392,7 +392,7 @@ cardiaque:1
 représentants:0
 ancien:0
 producteur:1
-cinéma:1
+cinéma:2
 détenu:1
 viol:1
 confirmé:0
@@ -491,7 +491,7 @@ impossibilité:1
 réaliser:0
 entretiens:1
 stars:0
-saison:1
+saison:2
 4:0
 disney+:1
 podcasteurs:1
@@ -528,7 +528,7 @@ lascive:1
 célia:1
 laborie:1
 invite:1
-documentaire:1
+documentaire:2
 affranchir:1
 tabous:1
 renouveler:1

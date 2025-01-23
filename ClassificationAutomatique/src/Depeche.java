@@ -21,9 +21,14 @@ public class Depeche {
 
     private ArrayList<String> decoupeEnMots(String contenu) {
         String chaine = contenu.toLowerCase();
-        ArrayList<Character> caracteresASupprimer = new ArrayList<>(Arrays.asList('\n', '-', '\'', '.', ',', '\"', '(', ')', ':'));
+        ArrayList<Character> caracteresASupprimer = new ArrayList<>(Arrays.asList('\n', '-', '\'', '.', ',', '\"', '(', ')', ':', ';', '?', '!', '«', '»', '’', '…', '—', '“', '”', '‘', '’', '–', '°', '€'));
+        ArrayList<String> complementASuprimer = new ArrayList<>(Arrays.asList("le", "la", "les", "un", "une", "des", "du", "de", "d'", "l'", "au", "me", "ma", "mes","nos"));
         for (char c : caracteresASupprimer) {
             chaine = chaine.replace(c, ' ');
+        }
+
+        for(String c : complementASuprimer){
+            chaine = chaine.replace(c, "");
         }
         String[] tabchaine = chaine.split(" ");
         ArrayList<String> resultat = new ArrayList<String>();

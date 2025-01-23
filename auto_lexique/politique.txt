@@ -1,12 +1,12 @@
-marine:1
+marine:2
 le:0
-pen:1
+pen:2
 dément:1
 s:0
 être:0
 entendue:1
 avec:0
-emmanuel:1
+emmanuel:2
 macron:2
 pour:0
 valider:1
@@ -20,7 +20,7 @@ matignon:2
 cheffe:1
 file:1
 du:0
-rassemblement:1
+rassemblement:2
 national:1
 assure:1
 ne:0
@@ -30,7 +30,7 @@ d:0
 gauche:2
 accuse:1
 président:0
-république:1
+république:2
 avoir:0
 accordé:0
 un:0
@@ -78,7 +78,7 @@ occident:0
 se:0
 débat:0
 selon:0
-lui:1
+lui:2
 depuis:0
 11:0
 septembre:0
@@ -161,10 +161,10 @@ responsable:1
 rn:2
 assurer:1
 absence:1
-censure:1
+censure:2
 automatique:1
 contre:0
-poursuit:1
+poursuit:2
 ses:0
 consultations:2
 ;:0
@@ -206,7 +206,7 @@ engagé:1
 nouveau:0
 premiers:0
 tâtons:1
-extrême:1
+extrême:2
 droite:2
 n:0
 ignore:1
@@ -226,7 +226,7 @@ bataille:0
 commence:1
 assemblée:1
 nationale:1
-députés:1
+députés:2
 entendent:1
 lundi:0
 ministres:1
@@ -279,7 +279,7 @@ limites:0
 cordon:1
 sanitaire:0
 suivez:1
-actualité:1
+actualité:2
 poursuivi:1
 former:1
 son:0
@@ -343,7 +343,7 @@ limite:0
 vue:0
 part:0
 ancien:0
-françois:1
+françois:2
 hollande:1
 déclaré:1
 voterait:1
@@ -394,7 +394,7 @@ jouer:0
 pleinement:1
 rôle:0
 évaluation:1
-politiques:1
+politiques:2
 publiques:0
 docteur:1
 public:0
@@ -427,11 +427,11 @@ dit:0
 aura:1
 lequel:1
 rencontrera:1
-élus:1
+élus:2
 macronistes:1
 mardi:0
 rendra:1
-journées:1
+journées:2
 ensemble:1
 réuni:1
 ambroise:1
@@ -451,13 +451,13 @@ conseillait:1
 leader:0
 trois:0
 échec:1
-législatives:1
+législatives:2
 sanctionne:1
 brebis:1
 galeuses:1
 déconcentre:1
 instances:0
-parti:1
+parti:2
 lancé:0
 revue:0
 compromettants:1
@@ -517,7 +517,7 @@ politiste:1
 jusqu:0
 où:0
 ira:1
-prochaine:1
+prochaine:2
 présidence:0
 ?:0
 stopper:1
@@ -533,7 +533,7 @@ vᵉ:1
 longtemps:0
 dysfonctionnelle:1
 régime:1
-parlementaire:1
+parlementaire:2
 papier:1
 dès:0
 gaulle:1
@@ -636,7 +636,7 @@ désigner:0
 poste:0
 marc:0
 fesneau:1
-modem:1
+modem:2
 stéphane:0
 séjourné:1
 renaissance:1
@@ -922,7 +922,7 @@ exposer:1
 mercredi:0
 rencontres:0
 rend:1
-horizons:1
+horizons:2
 celles:0
 yves:1
 pascouau:1
@@ -951,7 +951,7 @@ semaine:0
 nommera:1
 exprimé:1
 reims:1
-edouard:1
+edouard:2
 philippe:1
 poursuivront:1
 ensuite:1

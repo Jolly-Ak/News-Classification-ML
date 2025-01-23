@@ -7,12 +7,13 @@ public class MainKnn {
 
         ArrayList<Depeche> depeches = Classification.lectureDepeches("depeches.txt");
         ArrayList<Depeche> depeches_cible = Classification.lectureDepeches("ClassificationAutomatique/test.txt");
-        ArrayList<PaireChaineEntier> voisins = UtilitaireKnn.KnnDico(depeches, depeches_cible.get(0), 5);
+        ArrayList<PaireChaineEntier> voisins = UtilitaireKnn.KnnDico(depeches, depeches_cible.get(0));
 
         for (int i = 0; i < voisins.size(); i++) {
             voisins.get(i).afficher();
-
         }
+        System.out.println(UtilitaireKnn.CategorieMajoritaire(voisins, 6)+ " est la catégorie majoritaire");
+
 
 
 

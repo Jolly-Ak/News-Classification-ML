@@ -1,6 +1,6 @@
 seulement:1
 10:0
-%:1
+%:2
 des:0
 montures:1
 de:0
@@ -122,13 +122,13 @@ bce:1
 accusée:1
 étouffer:1
 europe:1
-banque:1
+banque:2
 centrale:1
-européenne:1
+européenne:2
 pourrait:0
 baisser:0
 ses:0
-taux:1
+taux:2
 intérêt:1
 lors:0
 sa:0
@@ -158,7 +158,7 @@ charges:1
 déficit:0
 qui:0
 entraîne:1
-baisse:1
+baisse:2
 qualité:1
 accueil:0
 résidents:1
@@ -214,7 +214,7 @@ polyactivité:1
 risque:0
 dégradation:0
 conditions:0
-travail:1
+travail:2
 arnaques:1
 aux:0
 assurances:1
@@ -276,7 +276,7 @@ dissimuler:0
 nombreuses:0
 dérives:0
 comptables:0
-apple:1
+apple:2
 huawei:1
 convaincre:1
 acheter:1
@@ -528,8 +528,8 @@ ancien:0
 président:0
 analyse:0
 décrochage:1
-etats:1
-unis:1
+etats:2
+unis:2
 tandis:0
 monte:0
 puissance:1
@@ -1550,7 +1550,7 @@ considération:1
 vieillissement:1
 bouleverse:1
 sociétés:1
-vieux:1
+vieux:2
 1/2:1
 début:0
 baby:0

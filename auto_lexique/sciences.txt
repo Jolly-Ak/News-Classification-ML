@@ -66,7 +66,7 @@ plutôt:0
 diminution:0
 selon:0
 une:0
-étude:1
+étude:2
 menée:0
 dans:0
 pays:0
@@ -201,7 +201,7 @@ ainsi:0
 qu:0
 formation:1
 tous:0
-spacex:1
+spacex:2
 lancé:0
 mardi:0
 sa:0
@@ -211,7 +211,7 @@ astronautes:1
 réaliser:1
 première:0
 sortie:1
-spatiale:1
+spatiale:2
 privée:1
 qui:0
 transporte:1
@@ -565,7 +565,7 @@ poissons:1
 respiration:1
 rectale:1
 menu:1
-nobel:1
+nobel:2
 improbable:1
 édition:0
 2024:0
@@ -762,7 +762,7 @@ porter:0
 fruits:1
 amerri:1
 large:0
-floride:1
+floride:2
 décollé:1
 cape:0
 canaveral:1
@@ -1098,7 +1098,7 @@ vivent:0
 aujourd:0
 hui:0
 méthylphénidate:1
-tdah:1
+tdah:2
 médicamenteux:1
 trouble:1
 déficit:0
