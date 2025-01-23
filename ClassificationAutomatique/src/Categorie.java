@@ -15,7 +15,12 @@ public class Categorie {
     }
 
 
-    public boolean initLexique(String nomFichier) {
+    public void initLexique(String nomFichier) {
+        // lecture du fichier d'entrée
+        //  chaque ligne du fichier contient un mot suivi de : et d'un entier
+        //  on crée un objet PaireChaineEntier pour chaque ligne
+        //  et on l'ajoute à la liste lexique
+
         try {
             FileInputStream file = new FileInputStream(nomFichier);
             Scanner scanner = new Scanner(file);
@@ -30,10 +35,8 @@ public class Categorie {
                 }
             }
             scanner.close();
-            return true; // Indicate success
         } catch (IOException e) {
             e.printStackTrace();
-            return false; // Indicate failure
         }
     }
 

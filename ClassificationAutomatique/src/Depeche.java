@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Depeche {
 
@@ -20,15 +21,10 @@ public class Depeche {
 
     private ArrayList<String> decoupeEnMots(String contenu) {
         String chaine = contenu.toLowerCase();
-        chaine = chaine.replace('\n', ' ');
-        chaine = chaine.replace('-', ' ');
-        chaine = chaine.replace('\'', ' ');
-        chaine = chaine.replace('.', ' ');
-        chaine = chaine.replace(',', ' ');
-        chaine = chaine.replace('\'', ' ');
-        chaine = chaine.replace('\"', ' ');
-        chaine = chaine.replace('(', ' ');
-        chaine = chaine.replace(')', ' ');
+        ArrayList<Character> caracteresASupprimer = new ArrayList<>(Arrays.asList('\n', '-', '\'', '.', ',', '\"', '(', ')', ':'));
+        for (char c : caracteresASupprimer) {
+            chaine = chaine.replace(c, ' ');
+        }
         String[] tabchaine = chaine.split(" ");
         ArrayList<String> resultat = new ArrayList<String>();
         for (int i = 0; i < tabchaine.length; i++) {
