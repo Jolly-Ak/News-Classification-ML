@@ -53,10 +53,12 @@ public class Categorie {
     public int score(Depeche d) {
         //d.contenue contient le texte de la dépêche
         //on le découpe en mots
+        int count = 0;
         ArrayList<String> mots = d.getMots();
         int score = 0;
         for (String mot : mots) {
             for (PaireChaineEntier paire : lexique) {
+                count = count + 1;
                 if (mot.compareTo(paire.getChaine()) == 0) {
                     score += paire.getEntier();
                 }

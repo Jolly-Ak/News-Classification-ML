@@ -14,6 +14,12 @@ public class Classification {
 
 
     public static ArrayList<Depeche> lectureDepeches(String nomFichier) {
+        /*
+        qui lit le fichier de nom nomFichier et renvoie un vecteur de dépêches. Chaque dépêche est
+        représentée par un objet de type Depeche.
+         */
+
+
         //creation d'un tableau de dépêches
         ArrayList<Depeche> depeches = new ArrayList<>();
         try {
@@ -144,11 +150,15 @@ public class Classification {
     }
 
     public static void calculScores(ArrayList<Depeche> depeches, String categorie, ArrayList<PaireChaineEntier> dictionnaire) {
-        /* Décrémente le score des mots de la categorie qui sont présents dans une autre categorie
+        /*
+         Décrémente le score des mots de la categorie qui sont présents dans une autre categorie
          */
+        int count = 0;
         for (Depeche depeche : depeches) {
             ArrayList<String> mots = depeche.getMots();
             for (String mot : mots) {
+                count += 1;
+
                 if (!depeche.getCategorie().equalsIgnoreCase(categorie)) {
                     int indice = UtilitairePaireChaineEntier.indicePourChaine(dictionnaire, mot);
                     if (indice != -1) {
@@ -158,22 +168,21 @@ public class Classification {
                 }
             }
         }
+        System.out.println("nombre de comparaisons calculeScorescount " +count + "pour la catégorie " + categorie);
     }
 
     public static int poidsPourScore(int score) {
-        if (score > 9000) {
+        /* qui renvoie le poids associé à un score donné. */
+        if (score > 20) {
             return 3;
         } else if (score > 10) {
-            return 3;
-        } else if (score > 5) {
             return 2;
-        } else{
+        } else
             return 1;
         }
-    }
+
 
     public static void generationLexique(ArrayList<Depeche> depeches, String categorie, String nomFichier) {
-
         /*qui crée pour la catégorie categorie le fichier lexique de nom nomFichier à partir du vecteur de
 dépêches depeches. Cette méthode doit construire une ArrayList<PaireChaineEntier> avec
 initDico, puis mettre à jour les scores dans ce vecteur avec calculScores et enfin utiliser le vecteur
@@ -186,7 +195,6 @@ classe ExempleEcritureFichier pour l’écriture dans un fichier.*/
 
         }
         dictionnaire = initDico(depeches, categorie);
-        System.out.println(dictionnaire);
         calculScores(depeches, categorie, dictionnaire);
 
         try {
@@ -198,12 +206,7 @@ classe ExempleEcritureFichier pour l’écriture dans un fichier.*/
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //print dictionnaire
-        for (int i = 0; i < dictionnaire.size(); i++) {
-            dictionnaire.get(i).afficher();
 
-
-        };
 
 
     }
@@ -239,22 +242,25 @@ classe ExempleEcritureFichier pour l’écriture dans un fichier.*/
         ArrayList<Categorie> auto_categories= new ArrayList<Categorie>();
 
         for (String name : categoriesNames) {
-            generationLexique(depeches, name, "./auto_lexique/" + name + ".txt");
+                generationLexique(depeches, name, "./auto_lexique/" + name + ".txt");
         }
 
         for (String name : categoriesNames) {
             Categorie categorie = new Categorie(name);
+            long startTime = System.currentTimeMillis();
+
             categorie.initLexique("./auto_lexique/" + name + ".txt");
+            long endTime = System.currentTimeMillis();
+            long duration = (endTime - startTime);
+            System.out.println("Temps d'execution pour la catégorie " + name + " : " + duration + "ms");
+
             auto_categories.add(categorie);
         }
         System.out.println("Classement des dépêches avec les lexiques automatiques");
 
-        long startTime = System.currentTimeMillis();
 
         classementDepeches(depeches_test, auto_categories, "auto_output.txt");
-        long endTime = System.currentTimeMillis();
 
-        System.out.println("votre saisie a été réalisée en : " + (endTime-startTime) + "ms");
 
 
 

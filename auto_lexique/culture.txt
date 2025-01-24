@@ -17,7 +17,7 @@ rc:1
 begé:1
 affiche:1
 nouve:1
-film:2
+film:1
 jon:1
 watts:1
 wolfs:1
@@ -181,7 +181,7 @@ zaho:1
 sagazan:1
 ldi:1
 service:1
-culture:2
+culture:1
 propose:1
 cteurs:1
 tina:1
@@ -200,7 +200,7 @@ conflit:1
 israélo:1
 pastinien:1
 agite:1
-festival:3
+festival:2
 photojournalis:1
 perpignan:1
 trois:1
@@ -227,7 +227,7 @@ préparer:1
 esprits:1
 invasion:1
 chinoise:1
-série:2
+série:1
 zero:1
 day:1
 dont:1
@@ -280,7 +280,7 @@ bout:1
 ferdinand:1
 céline:1
 sinateur:1
-réalisateur:2
+réalisateur:1
 acquis:1
 gallird:1
 droits:1
@@ -334,7 +334,7 @@ perforuse:1
 aln:1
 passée:1
 suite:1
-films:2
+films:1
 instaltions:1
 morte:1
 80:1
@@ -369,7 +369,7 @@ cardiaque:1
 représentants:1
 ancien:1
 procteur:1
-ciné:2
+ciné:1
 détenu:1
 viol:1
 confirmé:1
@@ -468,7 +468,7 @@ impossibilité:1
 réaliser:1
 entretiens:1
 stars:1
-saison:2
+saison:1
 disney+:1
 podcasteurs:1
 détectives:1
@@ -504,7 +504,7 @@ scive:1
 célia:1
 borie:1
 invite:1
-docuntaire:2
+docuntaire:1
 affranchir:1
 tabous:1
 renouver:1

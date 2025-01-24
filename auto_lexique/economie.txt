@@ -107,13 +107,13 @@ bce:1
 accusée:1
 étouffer:1
 europe:1
-banque:2
+banque:1
 centra:1
-européenne:2
+européenne:1
 pourrait:1
 baisser:1
 ses:1
-tx:2
+tx:1
 intérêt:1
 lors:1
 sa:1
@@ -142,7 +142,7 @@ charges:1
 déficit:1
 qui:1
 entraîne:1
-baisse:2
+baisse:1
 qualité:1
 accueil:1
 résints:1
@@ -196,7 +196,7 @@ polyactivité:1
 risque:1
 dégradation:1
 conditions:1
-travail:2
+travail:1
 arnaques:1
 assurances:1
 téléphone:1
@@ -257,7 +257,7 @@ dissimur:1
 nombreuses:1
 dérives:1
 comptabs:1
-app:2
+app:1
 huawei:1
 convaincre:1
 acheter:1
@@ -503,7 +503,7 @@ ancien:1
 présint:1
 analyse:1
 décrochage:1
-etats:2
+etats:1
 tandis:1
 monte:1
 puissance:1
@@ -1500,7 +1500,7 @@ considération:1
 vieillissent:1
 bouverse:1
 sociétés:1
-vieux:2
+vieux:1
 1/2:1
 début:1
 baby:1
