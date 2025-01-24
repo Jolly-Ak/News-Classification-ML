@@ -23,6 +23,8 @@ public class Depeche {
         String chaine = contenu.toLowerCase();
         ArrayList<Character> caracteresASupprimer = new ArrayList<>(Arrays.asList('\n', '-', '\'', '.', ',', '\"', '(', ')', ':', ';', '?', '!', '«', '»', '’', '…', '—', '“', '”', '‘', '’', '–', '°', '€'));
         ArrayList<String> complementASuprimer = new ArrayList<>(Arrays.asList("le", "la", "les", "un", "une", "des", "du", "de", "d'", "l'", "au", "me", "ma", "mes","nos"));
+
+
         for (char c : caracteresASupprimer) {
             chaine = chaine.replace(c, ' ');
         }
@@ -30,11 +32,16 @@ public class Depeche {
         for(String c : complementASuprimer){
             chaine = chaine.replace(c, "");
         }
+
         String[] tabchaine = chaine.split(" ");
         ArrayList<String> resultat = new ArrayList<String>();
         for (int i = 0; i < tabchaine.length; i++) {
             if (!tabchaine[i].equals("")) {
-                resultat.add(tabchaine[i]);
+                //ne pas lajouter si c'est une lettre toute seule
+                if (tabchaine[i].length() > 1){
+                    resultat.add(tabchaine[i]);
+                }
+
             }
         }
         return resultat;

@@ -45,10 +45,6 @@ public class Categorie {
     }
 
 
-    public ArrayList<PaireChaineEntier> getlexic() {
-        return lexique;
-    }
-
     public String getNom() {
         return nom;
     }

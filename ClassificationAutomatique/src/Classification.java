@@ -67,9 +67,6 @@ public class Classification {
             prediction.add(0);
         }
 
-        System.out.println("dictionnaire :"+ index_categorie);
-        System.out.println("validation :"+ validation);
-        System.out.println("donner :"+ donner);
 
         try {
             float  nb_valide_all= 0;
@@ -124,7 +121,6 @@ public class Classification {
             Le score est incrémenté à chaque nouvelle occurrence d'un mot
          */
         ArrayList<PaireChaineEntier> resultat = new ArrayList<>();
-        System.out.println("debut initDico");
 
         for (Depeche depeche : depeches) {
             if (depeche.getCategorie().equalsIgnoreCase(categorie)) {
@@ -165,16 +161,15 @@ public class Classification {
     }
 
     public static int poidsPourScore(int score) {
-        if (score > 20) {
+        if (score > 9000) {
+            return 3;
+        } else if (score > 10) {
             return 3;
         } else if (score > 5) {
             return 2;
-        } else if (score > 0) {
+        } else{
             return 1;
-        } else if (score <= 0) {
-            return 0;
         }
-        return -999;
     }
 
     public static void generationLexique(ArrayList<Depeche> depeches, String categorie, String nomFichier) {
@@ -193,7 +188,6 @@ classe ExempleEcritureFichier pour l’écriture dans un fichier.*/
         dictionnaire = initDico(depeches, categorie);
         System.out.println(dictionnaire);
         calculScores(depeches, categorie, dictionnaire);
-        System.out.println("dictionnaire :"+ dictionnaire);
 
         try {
             FileWriter writer = new FileWriter(nomFichier);
@@ -225,9 +219,20 @@ classe ExempleEcritureFichier pour l’écriture dans un fichier.*/
         // PARTIE 1 : chargement des lexiques créés à la main
         String[] categoriesNames = {"sport", "politique", "economie", "culture", "sciences"};
 
-//        float b = UtilitairePaireChaineEntier.moyenne(sport.getlexic());
-//        // print culture
-//        System.out.println("moyenne de la catégorie culture :"+ b);
+        //PARTIE 1
+
+        for (String name : categoriesNames) {
+            Categorie categorie = new Categorie(name);
+            categorie.initLexique("./lexique/" + name + ".txt");
+            categories.add(categorie);
+        }
+        System.out.println("Classement des dépêches avec les lexiques manuels");
+
+
+        classementDepeches(depeches_test, categories, "output.txt");
+
+
+
 
        // PARTIE 2
 
@@ -244,7 +249,14 @@ classe ExempleEcritureFichier pour l’écriture dans un fichier.*/
         }
         System.out.println("Classement des dépêches avec les lexiques automatiques");
 
+        long startTime = System.currentTimeMillis();
+
         classementDepeches(depeches_test, auto_categories, "auto_output.txt");
+        long endTime = System.currentTimeMillis();
+
+        System.out.println("votre saisie a été réalisée en : " + (endTime-startTime) + "ms");
+
+
 
     }
 

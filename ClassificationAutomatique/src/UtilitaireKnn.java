@@ -160,8 +160,12 @@ public class UtilitaireKnn {
 //        System.out.println(UtilitaireKnn.CategorieMajoritaire(voisins, 6)+ " est la catégorie majoritaire");
 
         ArrayList<Categorie> categories = new ArrayList<Categorie>();
+        long startTime = System.currentTimeMillis();
 
-        classementDepechesKnn(depeches,cibles,"output_auto_knn.txt", 15);
+        classementDepechesKnn(depeches,cibles,"output_auto_knn.txt", 30);
+
+        long endTime = System.currentTimeMillis();
+        System.out.println("votre saisie a été réalisée en : " + (endTime-startTime) + "ms");
 
 
 
